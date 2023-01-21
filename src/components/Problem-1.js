@@ -23,7 +23,7 @@ const Problem1 = () => {
     const showActive = () => {
         let activeArr = [];
         show?.forEach((element) => {
-            if (element.status === 'active') {
+            if (element.status.toLowerCase() === 'active') {
                 activeArr.push(element)
                 // console.log(activeArr);
                 setInfo(activeArr)
@@ -33,7 +33,7 @@ const Problem1 = () => {
     const showCompleted = () => {
         let completedArr = [];
         show?.forEach((element) => {
-            if (element.status === 'completed') {
+            if (element.status.toLowerCase() === 'completed') {
                 completedArr.push(element)
                 // console.log(activeArr);
                 setInfo(completedArr)
@@ -43,13 +43,13 @@ const Problem1 = () => {
     const showAll = () => {
         let allArr = [];
         const active = show.filter((element) => {
-            return element.status === 'active'
+            return element.status.toLowerCase() === 'active'
         })
         const completed = show.filter((element) => {
-            return element.status === 'completed'
+            return element.status.toLowerCase() === 'completed'
         })
         const rest = show.filter((element) => {
-            return element.status !== 'active' && element.status !== 'completed'
+            return element.status.toLowerCase() !== 'active' && element.status !== 'completed'
         })
 
         allArr.push(...active, ...completed, ...rest);
